@@ -1,0 +1,56 @@
+{
+  "name": "clayshop__fe-assignment",
+  "version": "1.0.0",
+  "description": "ClayShop Smart-lock interface using REST API",
+  "main": "server.js",
+  "scripts": {
+    "clear": "rm -rf ./build",
+    "start": "node server.js",
+    "dev:client": "nodemon --watch *.js --exec \"webpack-dev-server\"",
+    "build": "npm run clear && webpack -p",
+    "heroku-prebuild": "npm install --only=dev",
+    "heroku-postbuild": "npm run build",
+    "lint": "eslint . --ext .js, .jsx",
+    "lint:fix": "eslint --fix . --ext .js, .jsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "9.3.0",
+    "npm": "5.6.0"
+  },
+  "keywords": [
+    "React",
+    "Redux",
+    "Redux-form",
+    "Material-design",
+    "Authentication"
+  ],
+  "author": "Kafil Uddin",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "eslint-config-latest": "^1.0.6",
+    "nodemon": "^1.14.12",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "express": "^4.16.2",
+    "material-ui": "^1.0.0-beta.32",
+    "material-ui-icons": "^1.0.0-beta.17",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-form": "^7.2.3",
+    "redux-thunk": "^2.2.0"
+  }
+}

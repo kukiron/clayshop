@@ -1,0 +1,199 @@
+body,
+h1,
+h2,
+h3,
+p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial,
+    sans-serif !important;
+  font-weight: 400;
+}
+
+/** Container for the app */
+.container {
+  margin-top: 40px;
+  width: 80%;
+}
+
+/** Button styling */
+.btn,
+.btn-primary {
+  margin: 10px 15px 0 0;
+  padding: 20px 25px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 16.5px;
+}
+
+/** Material icon */
+i {
+  margin-left: 10px;
+}
+
+/** Form width & margin adjustment */
+form {
+  width: 80%;
+  margin: 60px auto;
+}
+
+.form-group {
+  margin: 25px auto;
+}
+
+/** Page components alignment & width */
+.home {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.home,
+.clayshop,
+.logout,
+.redirect {
+  text-align: center;
+}
+
+/** Spacing for images */
+div img {
+  margin: 30px auto;
+}
+
+/** Navigation Menu */
+a {
+  text-decoration: none !important;
+}
+
+.nav-fostrap {
+  width: 65%;
+  display: block;
+  text-align: center;
+  margin: 15px auto 15px;
+  background: #03a9f4;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  border-radius: 3px;
+}
+
+.nav-fostrap ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.nav-fostrap li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  position: relative;
+  font-size: 16.5px;
+  color: #def1f0;
+}
+
+.nav-fostrap li a {
+  padding: 20px 22px;
+  color: #def1f0;
+  display: inline-block;
+  outline: 0;
+  font-weight: 400;
+}
+
+.nav-fostrap li:hover a {
+  background: #2980b9;
+  color: #fff !important;
+}
+
+.nav-fostrap li:active a {
+  background: #216796;
+  color: #fff !important;
+}
+
+/* Door options styling */
+.front-door > h3,
+.storage-door > h3 {
+  position: absolute;
+  top: 60px;
+  margin: auto;
+}
+
+.front-door,
+.storage-door {
+  width: 400px;
+  height: 400px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 60px;
+  background-size: cover;
+  position: relative;
+}
+
+.front-door::after,
+.storage-door::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.storage-door::after {
+  background: url("../images/storage-door.png") no-repeat center center;
+}
+
+.front-door::after {
+  background: url("../images/front-door.png") no-repeat center center;
+}
+
+.clayshop > h1 {
+  margin: 40px auto;
+}
+
+/** Error messages*/
+h2 {
+  margin-top: 80px;
+  line-height: 44px;
+  text-align: center;
+}
+
+.text-danger {
+  font-size: 13px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/** Replace material UI Typography component */
+.user--list-class {
+  margin: 0;
+  display: block;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.46429em;
+}
+
+/** MUI expansion panel button & text styling */
+
+div[role="button"] {
+  background: #f1f1f1;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.26);
+  border-radius: 3px;
+}
+
+/** Responsive style */
+@media (max-width: 760px) {
+  .container {
+    width: 75%;
+  }
+  form {
+    width: 75%;
+    margin: 40px auto;
+  }
+  .nav-fostrap {
+    width: 80%;
+  }
+}
