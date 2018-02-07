@@ -17,7 +17,7 @@ class UsersDetail extends Component {
     this.props.fetchUsers()
   }
 
-  // Get the user list from server and list them with access details
+  // Get the users' list from server and list them with access details
   renderUsers() {
     const { users } = this.props
     if (!users) return <div>Loading...</div>

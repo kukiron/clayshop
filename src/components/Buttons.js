@@ -4,6 +4,7 @@ import { Route, Link } from "react-router-dom"
 const submit = "btn btn-raised btn-primary",
   cancel = "btn btn-raised btn-danger"
 
+// Buttons to allow users in based on authorization level
 export const AccessButton = ({ door, onClick }) => (
   <Route
     render={() => (
@@ -14,6 +15,7 @@ export const AccessButton = ({ door, onClick }) => (
   />
 )
 
+// Authentication buttons for login & signup
 export const AuthButtons = ({ label }) => {
   const icon = label === "Log in" ? "send" : "cloud"
 

@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 
+// HOC: responsive appearance upon resize for the app
 export default ChartComponent =>
   class ResponsiveChart extends Component {
     constructor(props) {
