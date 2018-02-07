@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-// HOC: responsive appearance upon resize for the app
+// HOC: wraps the app for to be responsive to resizing
 export default ChartComponent =>
   class ResponsiveChart extends Component {
     constructor(props) {
@@ -22,10 +22,10 @@ export default ChartComponent =>
     }
 
     fitParentContainer() {
-      const { containerWidth } = this.state
-      const currentContainerWidth = this.chartContainer.getBoundingClientRect()
-        .width
-      const shouldResize = containerWidth !== currentContainerWidth
+      const { containerWidth } = this.state,
+        currentContainerWidth = this.chartContainer.getBoundingClientRect()
+          .width,
+        shouldResize = containerWidth !== currentContainerWidth
 
       if (shouldResize) {
         this.setState({
