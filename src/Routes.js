@@ -12,7 +12,7 @@ import NewUserCreated, { AuthSuccess, AuthFailure } from "./pages/Redirects"
 // HOCs
 import RequireAuth from "./wrappers/RequireAuth"
 import RequireAdmin from "./wrappers/RequireAdmin"
-import ResponsiveWrapper from "./wrappers/ResponsiveWrapper"
+import RouteChangeWrapper from "./wrappers/RouteChangeWrapper"
 
 const Routes = () => (
   <Switch>
@@ -28,4 +28,4 @@ const Routes = () => (
   </Switch>
 )
 
-export default ResponsiveWrapper(Routes)
+export default RouteChangeWrapper(Routes)

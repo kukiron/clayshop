@@ -7,6 +7,7 @@ import {
   SIGNUP_USER,
   LOGIN_ERROR,
   SIGNUP_ERROR,
+  REMOVE_ERROR,
   FETCH_USERS,
   FETCH_DATA
 } from "./constants"
@@ -76,6 +77,12 @@ export const authenticateUser = ({
     dispatch(loginError("Bad login info"))
   }
 }
+
+// Remove dangling error messages on route change
+export const routeChange = () => ({
+  type: REMOVE_ERROR,
+  payload: ""
+})
 
 // Fetch the list of users currently authorized
 export const fetchUsers = () => async dispatch => {

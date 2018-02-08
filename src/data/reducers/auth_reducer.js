@@ -4,6 +4,7 @@ import {
   SIGNUP_USER,
   LOGIN_ERROR,
   SIGNUP_ERROR,
+  REMOVE_ERROR,
   FETCH_USERS,
   FETCH_DATA
 } from "../actions/constants"
@@ -26,6 +27,9 @@ export default (state = {}, action) => {
 
     case SIGNUP_ERROR:
       return { ...state, signupErrorMsg: payload }
+
+    case REMOVE_ERROR:
+      return { ...state, loginErrorMsg: payload, signupErrorMsg: payload }
 
     case FETCH_USERS:
       return { ...state, users: payload }
