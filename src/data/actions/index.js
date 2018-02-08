@@ -70,7 +70,7 @@ export const authenticateUser = ({
     const response = await request
     dispatch({ type: AUTH_USER })
     localStorage.setItem("token", response.data.token)
-    history.push("/feature")
+    history.push("/clayshop")
   } catch (err) {
     console.log(err)
     dispatch(loginError("Bad login info"))
