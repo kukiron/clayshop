@@ -20,7 +20,7 @@ export const AuthButtons = ({ label }) => {
   const icon = label === "Log in" ? "send" : "cloud"
 
   return (
-    <div>
+    <div className="auth-btn">
       <button className={submit} type="submit">
         {label}
         <i className="material-icons">{icon}</i>

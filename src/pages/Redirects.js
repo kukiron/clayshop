@@ -2,22 +2,22 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 
 // These components redirect after user events
-export const Success = () => {
+export const AuthSuccess = () => {
   return (
     <div className="redirect">
       <img src="public/images/access-granted.png" alt="access granted image" />
-      <h3>You have successfully entered.</h3>
+      <h3>You have successfully entered</h3>
     </div>
   )
 }
 
-export const Failure = () => {
+export const AuthFailure = () => {
   return (
     <div className="redirect">
       <img src="public/images/access-denied.png" alt="access denied image" />
       <h3>
         Access Denied.<br />
-        You are not authorized.
+        You are not authorized
       </h3>
     </div>
   )

@@ -15,7 +15,7 @@ class ClayShop extends Component {
       // check for user authorization level for door access
       doorAccess = access === "Admin" || access === "Both" || access === door
 
-    doorAccess ? history.push("/success") : history.push("/failure")
+    doorAccess ? history.push("/authorized") : history.push("/unauthorized")
   }
 
   render() {

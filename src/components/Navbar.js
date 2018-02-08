@@ -7,7 +7,7 @@ class Navbar extends Component {
   authenticatedUser() {
     return [
       <li key={2}>
-        <NavLink to="/feature">ClayShop</NavLink>
+        <NavLink to="/clayshop">ClayShop</NavLink>
       </li>,
       <li key={1}>
         <NavLink to="/logout">Logout</NavLink>
