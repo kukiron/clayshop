@@ -2,7 +2,7 @@ import React, { Component } from "react"
 
 // HOC: wraps the app for responsive to resizing
 export default ChartComponent =>
-  class ResponsiveChart extends Component {
+  class ResponsiveWrapper extends Component {
     constructor(props) {
       super(props)
       this.state = {
