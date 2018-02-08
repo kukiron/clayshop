@@ -2,6 +2,7 @@ body,
 h1,
 h2,
 h3,
+h4,
 p {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial,
@@ -24,10 +25,24 @@ p {
   align-items: center;
   font-size: 16.5px;
 }
+.auth-btn {
+  margin-top: 30px;
+}
 
 /** Material icon */
 i {
   margin-left: 10px;
+}
+
+/** Show password checkbox */
+input[type="checkbox"] {
+  float: right;
+  position: relative;
+  margin-top: -50px;
+  margin-right: 15px;
+
+  width: 16px;
+  height: 16px;
 }
 
 /** Form width & margin adjustment */
@@ -35,7 +50,6 @@ form {
   width: 80%;
   margin: 60px auto;
 }
-
 .form-group {
   margin: 25px auto;
 }
@@ -45,11 +59,11 @@ form {
   width: 75%;
   margin: 0 auto;
 }
-
 .home,
 .clayshop,
 .logout,
-.redirect {
+.redirect,
+.no-match {
   text-align: center;
 }
 
@@ -62,7 +76,6 @@ div img {
 a {
   text-decoration: none !important;
 }
-
 .nav-fostrap {
   width: 65%;
   display: block;
@@ -72,14 +85,12 @@ a {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   border-radius: 3px;
 }
-
 .nav-fostrap ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: block;
 }
-
 .nav-fostrap li {
   list-style-type: none;
   margin: 0;
@@ -89,7 +100,6 @@ a {
   font-size: 16.5px;
   color: #def1f0;
 }
-
 .nav-fostrap li a {
   padding: 20px 22px;
   color: #def1f0;
@@ -97,12 +107,10 @@ a {
   outline: 0;
   font-weight: 400;
 }
-
 .nav-fostrap li:hover a {
   background: #2980b9;
   color: #fff !important;
 }
-
 .nav-fostrap li:active a {
   background: #216796;
   color: #fff !important;
@@ -115,7 +123,6 @@ a {
   top: 60px;
   margin: auto;
 }
-
 .front-door,
 .storage-door {
   width: 400px;
@@ -127,7 +134,6 @@ a {
   background-size: cover;
   position: relative;
 }
-
 .front-door::after,
 .storage-door::after {
   content: "";
@@ -140,15 +146,12 @@ a {
   opacity: 0.2;
   z-index: -1;
 }
-
 .storage-door::after {
   background: url("../images/storage-door.png") no-repeat center center;
 }
-
 .front-door::after {
   background: url("../images/front-door.png") no-repeat center center;
 }
-
 .clayshop > h1 {
   margin: 40px auto;
 }
@@ -159,7 +162,6 @@ h2 {
   line-height: 44px;
   text-align: center;
 }
-
 .text-danger {
   font-size: 13px;
   font-weight: bold;
@@ -177,7 +179,6 @@ h2 {
 }
 
 /** MUI expansion panel button & text styling */
-
 div[role="button"] {
   background: #f1f1f1;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.26);

@@ -2,7 +2,12 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 import { reduxForm, Field } from "redux-form"
 
-import { renderTextField, renderError, validate } from "./form-helpers"
+import {
+  renderTextField,
+  renderError,
+  validate,
+  showPassword
+} from "./form-helpers"
 import { signupUser } from "../../data/actions"
 import { AuthButtons } from "../../components/Buttons"
 
@@ -35,6 +40,7 @@ class Signup extends Component {
         <Field label="Fullname" name="fullname" component={renderTextField} />
         <Field label="Email" name="email" component={renderTextField} />
         <Field label="Password" name="password" component={renderTextField} />
+        <input type="checkbox" onClick={showPassword} />
         <Field name="access" component={this.renderSelectField} />
         <div>{renderError(signupErrorMsg)}</div>
         <AuthButtons label="Create Account" />

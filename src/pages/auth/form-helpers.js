@@ -2,16 +2,13 @@ import React from "react"
 
 // Render text firlds for the forms
 export const renderTextField = ({ label, input, meta: { touched, error } }) => {
-  const type = input.name === "password" ? "password" : "text"
+  const type = input.name === "password" ? "password" : "text",
+    className = `form-control ${type}`
+
   return (
     <div className="form-group">
       <label>{label}</label>
-      <input
-        type={type}
-        placeholder={label}
-        className="form-control"
-        {...input}
-      />
+      <input type={type} placeholder={label} className={className} {...input} />
       {touched && error && <div className="text-danger">{error}</div>}
     </div>
   )
@@ -20,6 +17,14 @@ export const renderTextField = ({ label, input, meta: { touched, error } }) => {
 // Render error messages for bad request
 export const renderError = error => {
   return error && <div className="alert alert-danger">{error}</div>
+}
+
+// Toggle input type to show password in login & signup forms
+export const showPassword = () => {
+  const field = document.querySelector(".password"),
+    isPassword = field.type === "password"
+
+  field.type = isPassword ? "text" : "password"
 }
 
 // Validate form fields
