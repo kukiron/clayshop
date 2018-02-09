@@ -1,7 +1,7 @@
 {
-  "name": "clayshop__fe-assignment",
+  "name": "clayshop__react-app",
   "version": "1.0.0",
-  "description": "ClayShop Smart-lock interface using REST API",
+  "description": "ClayShop Smart-lock web interface using REST API",
   "main": "server.js",
   "scripts": {
     "clear": "rm -rf ./build",
