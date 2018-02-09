@@ -2,32 +2,17 @@ require("babel-polyfill")
 import axios from "axios"
 
 import {
+  FETCH_USERS,
+  FETCH_DATA,
   AUTH_USER,
   UNAUTH_USER,
   SIGNUP_USER,
   LOGIN_ERROR,
   SIGNUP_ERROR,
-  REMOVE_ERROR,
-  FETCH_USERS,
-  FETCH_DATA
+  REMOVE_ERROR
 } from "./constants"
 
 const ROOT_URL = "https://api-clayshop.herokuapp.com"
-
-// Application state for the error cases
-const loginError = error => {
-  return {
-    type: LOGIN_ERROR,
-    payload: error
-  }
-}
-
-const signupError = error => {
-  return {
-    type: SIGNUP_ERROR,
-    payload: error
-  }
-}
 
 // Add new user
 export const signupUser = ({
@@ -52,7 +37,11 @@ export const signupUser = ({
     })
     history.push("/user-created")
   } catch (err) {
-    dispatch(signupError(err.response.data.error))
+    // handle bad request
+    dispatch({
+      type: SIGNUP_ERROR,
+      payload: err
+    })
   }
 }
 
@@ -74,15 +63,13 @@ export const authenticateUser = ({
     history.push("/clayshop")
   } catch (err) {
     console.log(err)
-    dispatch(loginError("Bad login info"))
+    // handle bad request
+    dispatch({
+      type: LOGIN_ERROR,
+      payload: "Bad login info"
+    })
   }
 }
-
-// Remove dangling error messages on route change
-export const routeChange = () => ({
-  type: REMOVE_ERROR,
-  payload: ""
-})
 
 // Fetch the list of users currently authorized
 export const fetchUsers = () => async dispatch => {
@@ -111,3 +98,9 @@ export const logoutUser = () => {
   localStorage.removeItem("token")
   return { type: UNAUTH_USER }
 }
+
+// Remove dangling error messages on route change
+export const routeChange = () => ({
+  type: REMOVE_ERROR,
+  payload: ""
+})

@@ -6,7 +6,7 @@ import { AccessButton } from "../components/Buttons"
 
 // App landing page for all the shop employees
 class ClayShop extends Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchUserAccess()
   }
 
