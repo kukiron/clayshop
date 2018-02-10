@@ -30,12 +30,10 @@ const SimpleExpansionPanel = props => {
       <div className={classes.root}>
         <ExpansionPanel>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <div className={`${classes.heading} user--list-class`}>
-              Shop Doors
-            </div>
+            <div className={`${classes.heading} users-list`}>Shop Doors</div>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <div className="user--list-class">
+            <div className="users-list">
               <Doors />
             </div>
           </ExpansionPanelDetails>
@@ -43,12 +41,10 @@ const SimpleExpansionPanel = props => {
 
         <ExpansionPanel>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <div className={`${classes.heading} user--list-class`}>
-              Users' List
-            </div>
+            <div className={`${classes.heading} users-list`}>Users' List</div>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <div className="user--list-class">
+            <div className="users-list">
               <Users />
             </div>
           </ExpansionPanelDetails>

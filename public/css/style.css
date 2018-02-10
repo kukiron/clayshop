@@ -169,7 +169,7 @@ h2 {
 }
 
 /** Replace material UI Typography component */
-.user--list-class {
+.users-list {
   margin: 0;
   display: block;
   color: rgba(0, 0, 0, 0.87);
