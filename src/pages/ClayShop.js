@@ -11,9 +11,10 @@ class ClayShop extends Component {
   }
 
   handlePermission(door) {
-    const { access, history } = this.props,
+    const { userAccess, history } = this.props,
       // check for user authorization level for door access
-      doorAccess = access === "Admin" || access === "Both" || access === door
+      doorAccess =
+        userAccess === "Admin" || userAccess === "Both" || userAccess === door
 
     doorAccess ? history.push("/authorized") : history.push("/unauthorized")
   }
@@ -42,8 +43,8 @@ class ClayShop extends Component {
   }
 }
 
-const mapStateToProps = ({ auth: { access } }) => {
-  return { access }
+const mapStateToProps = ({ users: { userAccess } }) => {
+  return { userAccess }
 }
 
 export default connect(mapStateToProps, { fetchUserAccess })(ClayShop)

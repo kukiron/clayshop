@@ -49,7 +49,7 @@ class Signup extends Component {
   }
 }
 
-const mapStateToProps = ({ auth: { signupErrorMsg } }) => ({
+const mapStateToProps = ({ errors: { signupErrorMsg } }) => ({
   signupErrorMsg
 })
 

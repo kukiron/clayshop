@@ -26,10 +26,10 @@ class Navbar extends Component {
 
   // Navigation link only for Admin to create user
   addUserLink() {
-    const { authenticated, access } = this.props
+    const { authenticated, userAccess } = this.props
     return (
       authenticated &&
-      access === "Admin" && (
+      userAccess === "Admin" && (
         <li>
           <NavLink to="/signup">Add New User</NavLink>
         </li>
@@ -56,9 +56,12 @@ class Navbar extends Component {
   }
 }
 
-const mapStateToProps = ({ auth: { authenticated, access } }) => ({
+const mapStateToProps = ({
+  auth: { authenticated },
+  users: { userAccess }
+}) => ({
   authenticated,
-  access
+  userAccess
 })
 
 export default connect(mapStateToProps)(Navbar)

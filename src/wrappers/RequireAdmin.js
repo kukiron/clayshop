@@ -5,11 +5,13 @@ import { connect } from "react-redux"
 export default ComposedComponent => {
   class AuthAdmin extends Component {
     componentWillMount() {
-      if (this.props.access !== "Admin") this.props.history.push("/clayshop")
+      const { userAccess, history } = this.props
+      userAccess !== "Admin" && history.push("/clayshop")
     }
 
     componentWillUpdate(nextProps) {
-      if (nextProps.access !== "Admin") this.props.history.push("/clayshop")
+      const { history } = this.props
+      nextProps.userAccess !== "Admin" && history.push("/clayshop")
     }
 
     render() {
@@ -17,8 +19,8 @@ export default ComposedComponent => {
     }
   }
 
-  function mapStateToProps({ auth: { access } }) {
-    return { access }
+  function mapStateToProps({ users: { userAccess } }) {
+    return { userAccess }
   }
 
   return connect(mapStateToProps)(AuthAdmin)

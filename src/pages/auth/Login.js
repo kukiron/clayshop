@@ -37,7 +37,7 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = ({ auth: { loginErrorMsg } }) => ({
+const mapStateToProps = ({ errors: { loginErrorMsg } }) => ({
   loginErrorMsg
 })
 

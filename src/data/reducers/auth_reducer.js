@@ -1,14 +1,6 @@
-import {
-  AUTH_USER,
-  UNAUTH_USER,
-  SIGNUP_USER,
-  LOGIN_ERROR,
-  SIGNUP_ERROR,
-  REMOVE_ERROR,
-  FETCH_USERS,
-  FETCH_DATA
-} from "../actions/constants"
+import { AUTH_USER, UNAUTH_USER, SIGNUP_USER } from "../actions/constants"
 
+// Reducer for user authentication events
 export default (state = {}, action) => {
   const { type, payload } = action
 
@@ -21,22 +13,6 @@ export default (state = {}, action) => {
 
     case SIGNUP_USER:
       return { ...state, signupErrorMsg: "", signupSuccess: payload }
-
-    case LOGIN_ERROR:
-      return { ...state, loginErrorMsg: payload }
-
-    case SIGNUP_ERROR:
-      return { ...state, signupErrorMsg: payload }
-
-    case REMOVE_ERROR:
-      return { ...state, loginErrorMsg: payload, signupErrorMsg: payload }
-
-    case FETCH_USERS:
-      return { ...state, users: payload }
-
-    case FETCH_DATA:
-      return { ...state, access: payload }
   }
-
   return state
 }

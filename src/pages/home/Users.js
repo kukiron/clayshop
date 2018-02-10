@@ -19,10 +19,10 @@ class UsersDetail extends Component {
 
   // Get the users' list from server and list them with access details
   renderUsers() {
-    const { users } = this.props
-    if (!users) return <div>Loading...</div>
+    const { usersList } = this.props
+    if (!usersList) return <div>Loading...</div>
 
-    return users.map((user, index) => (
+    return usersList.map((user, index) => (
       <div key={index}>
         <ListItem style={{ width: "50vw", marginRight: "10px" }}>
           <i className="material-icons">person_pin</i>
@@ -47,7 +47,7 @@ class UsersDetail extends Component {
   }
 }
 
-const mapStateToProps = ({ auth: { users } }) => ({ users })
+const mapStateToProps = ({ users: { usersList } }) => ({ usersList })
 
 const Users = connect(mapStateToProps, { fetchUsers })(UsersDetail)
 
