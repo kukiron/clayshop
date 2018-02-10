@@ -19,7 +19,7 @@ const DoorsDetail = props => {
         <ListItem style={{ width: "50vw", marginRight: "10px" }}>
           <i className="material-icons">store</i>
           <ListItemText primary="Front Door" />
-          All the shop employees can entry through the front door
+          Employees need to have authorized access for the front door
         </ListItem>
         <Divider dark="true" />
 
