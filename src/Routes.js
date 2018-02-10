@@ -2,7 +2,7 @@ import React from "react"
 import { Route, Switch } from "react-router-dom"
 
 // List of imports for setting routes
-import Home from "./pages/Home"
+import Home from "./pages/home"
 import ClayShop from "./pages/ClayShop"
 import Login from "./pages/auth/Login"
 import Logout from "./pages/auth/Logout"
