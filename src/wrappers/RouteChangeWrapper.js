@@ -4,12 +4,12 @@ import { withRouter } from "react-router-dom"
 
 import { routeChange } from "../data/actions"
 
-// HOC: protect routes for Admin auth'd routes
+// HOC: wraps the entire app to check for route change & remove dangling errors
 export default ComposedComponent => {
   class ResetErrors extends Component {
     componentWillReceiveProps(nextProps) {
-      this.props.location.pathname !== nextProps.location.pathname &&
-        this.props.routeChange()
+      const { routeChange, location } = this.props
+      location.pathname !== nextProps.location.pathname && routeChange()
     }
 
     render() {
