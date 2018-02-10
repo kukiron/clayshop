@@ -11,8 +11,8 @@ import Doors from "./Doors"
 
 const styles = theme => ({
   root: {
-    marginTop: "20px",
-    width: "100%"
+    margin: "20px auto",
+    width: "75%"
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
