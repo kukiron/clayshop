@@ -1,6 +1,6 @@
 import React from "react"
 
-// Render text firlds for the forms
+// Render text fields for the forms
 export const renderTextField = ({ label, input, meta: { touched, error } }) => {
   const type = input.name === "password" ? "password" : "text",
     className = `form-control ${type}`

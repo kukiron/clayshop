@@ -36,11 +36,11 @@ export const signupUser = ({
       payload: response.data.message
     })
     history.push("/user-created")
-  } catch (err) {
+  } catch ({ response }) {
     // handle bad request
     dispatch({
       type: SIGNUP_ERROR,
-      payload: err
+      payload: response.data.error
     })
   }
 }
