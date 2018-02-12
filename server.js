@@ -13,7 +13,6 @@ app.get("*", (req, res) => {
 })
 
 // Listening to the port
-app.listen(
-  port,
+app.listen(port, () => {
   console.log(`🌍 Express server is up and running on port: ${port} 🐎`)
-)
+})
