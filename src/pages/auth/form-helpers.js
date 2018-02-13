@@ -14,11 +14,6 @@ export const renderTextField = ({ label, input, meta: { touched, error } }) => {
   )
 }
 
-// Render error messages for bad request
-export const renderError = error => {
-  return error && <div className="alert alert-danger">{error}</div>
-}
-
 // Toggle input type to show password in login & signup forms
 export const showPassword = () => {
   const field = document.querySelector(".password"),
