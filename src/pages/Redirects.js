@@ -24,7 +24,7 @@ export const AuthFailure = () => {
 }
 
 // Redirect after successful user creation
-class NewUserCreated extends Component {
+class SignupSuccessPage extends Component {
   render() {
     return (
       <div className="redirect">
@@ -35,6 +35,22 @@ class NewUserCreated extends Component {
   }
 }
 
-const mapStateToProps = ({ auth: { signupSuccess } }) => ({ signupSuccess })
+export const NewUserCreated = connect(({ auth: { signupSuccess } }) => ({
+  signupSuccess
+}))(SignupSuccessPage)
 
-export default connect(mapStateToProps)(NewUserCreated)
+// Redirect after user existing deletion
+class UserDeletedPage extends Component {
+  render() {
+    return (
+      <div className="redirect">
+        <img src="public/images/user-deleted.png" alt="delete user image" />
+        <h3>{this.props.deleteSuccess}</h3>
+      </div>
+    )
+  }
+}
+
+export const UserDeleted = connect(({ auth: { deleteSuccess } }) => ({
+  deleteSuccess
+}))(UserDeletedPage)
