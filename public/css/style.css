@@ -183,8 +183,12 @@ a {
   width: 560px;
   margin: 30px auto;
 }
+.users-list__icon {
+  float: left;
+  margin: 8px 25px auto auto;
+}
 .user {
-  padding: 15px 20px 2px 40px;
+  padding: 10px 20px 2px 30px;
   list-style: none;
 }
 .user:hover {
@@ -274,5 +278,10 @@ div[role="button"] {
   .users-list__delete {
     width: 65vw;
     margin: 10px auto;
+  }
+  .delete-btn {
+    font-size: 12px;
+    margin-top: -45px;
+    padding: 5px 8px;
   }
 }

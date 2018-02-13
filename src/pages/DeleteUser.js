@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
+// import { ListItemIcon } from "material-ui/List"
+// import Person from "material-ui-icons/Person"
 
 import { fetchUsers, deleteUser } from "../data/actions"
 import renderError from "../components/RenderError"
@@ -23,8 +25,11 @@ class UsersList extends Component {
     return usersList.map((user, i) => (
       <div key={i}>
         <li className="user">
-          <h6>{user.fullname}</h6>
-          <p>{`Door Access: ${user.access}`}</p>
+          <i className="material-icons users-list__icon">person_pin</i>
+          <div>
+            <h6>{user.fullname}</h6>
+            <p>{`Door Access: ${user.access}`}</p>
+          </div>
           <button
             className="btn btn-raised btn-danger delete-btn"
             onClick={() => this.handleDelete(user._id)}
