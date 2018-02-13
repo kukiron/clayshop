@@ -7,8 +7,10 @@ import {
   AUTH_USER,
   UNAUTH_USER,
   SIGNUP_USER,
+  DELETE_USER,
   LOGIN_ERROR,
   SIGNUP_ERROR,
+  DELETE_ERROR,
   REMOVE_ERROR
 } from "./constants"
 
@@ -67,6 +69,25 @@ export const authenticateUser = ({
     dispatch({
       type: LOGIN_ERROR,
       payload: "Bad login info"
+    })
+  }
+}
+
+// delete existing user
+export const deleteUser = (id, { history }) => async dispatch => {
+  const request = axios.delete(`${ROOT_URL}/delete`, { params: { id } })
+
+  try {
+    const response = await request
+    dispatch({
+      type: DELETE_USER,
+      payload: response.data.success
+    })
+    history.push("/user-deleted")
+  } catch ({ response }) {
+    dispatch({
+      type: DELETE_ERROR,
+      payload: response.data.error
     })
   }
 }

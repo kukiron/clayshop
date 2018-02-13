@@ -1,4 +1,9 @@
-import { LOGIN_ERROR, SIGNUP_ERROR, REMOVE_ERROR } from "../actions/constants"
+import {
+  LOGIN_ERROR,
+  SIGNUP_ERROR,
+  REMOVE_ERROR,
+  DELETE_ERROR
+} from "../actions/constants"
 
 // Reducer for errors generating events
 export default (state = {}, action) => {
@@ -13,6 +18,9 @@ export default (state = {}, action) => {
 
     case REMOVE_ERROR:
       return { ...state, loginErrorMsg: payload, signupErrorMsg: payload }
+
+    case DELETE_ERROR:
+      return { ...state, deleteErrorMsg: payload }
   }
   return state
 }

@@ -1,4 +1,9 @@
-import { AUTH_USER, UNAUTH_USER, SIGNUP_USER } from "../actions/constants"
+import {
+  AUTH_USER,
+  UNAUTH_USER,
+  SIGNUP_USER,
+  DELETE_USER
+} from "../actions/constants"
 
 // Reducer for user authentication events
 export default (state = {}, action) => {
@@ -13,6 +18,9 @@ export default (state = {}, action) => {
 
     case SIGNUP_USER:
       return { ...state, signupErrorMsg: "", signupSuccess: payload }
+
+    case DELETE_USER:
+      return { ...state, deleteSuccess: payload }
   }
   return state
 }
