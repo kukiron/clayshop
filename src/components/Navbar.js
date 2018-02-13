@@ -24,14 +24,24 @@ class Navbar extends Component {
     )
   }
 
-  // Navigation link only for Admin to create user
+  // Navigation link only for Admin to create & delete user
   addUserLink() {
     const { authenticated, userAccess } = this.props
     return (
       authenticated &&
       userAccess === "Admin" && (
         <li>
-          <NavLink to="/signup">Add New User</NavLink>
+          <a href="#">
+            Admin <span className="arrow">&#9660;</span>
+          </a>
+          <ul className="sub-menu">
+            <li>
+              <NavLink to="/signup">Add User</NavLink>
+            </li>
+            <li>
+              <NavLink to="/delete-user">Delete User</NavLink>
+            </li>
+          </ul>
         </li>
       )
     )
@@ -41,7 +51,7 @@ class Navbar extends Component {
     const { authenticated } = this.props
 
     return (
-      <div className="nav-fostrap">
+      <div className="menu">
         <ul>
           <li>
             <NavLink to="/">Home</NavLink>
