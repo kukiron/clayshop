@@ -186,6 +186,7 @@ a {
 .users-list__icon {
   float: left;
   margin: 8px 25px auto auto;
+  color: ccc;
 }
 .user {
   padding: 10px 20px 2px 30px;
