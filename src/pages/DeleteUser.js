@@ -1,7 +1,5 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
-// import { ListItemIcon } from "material-ui/List"
-// import Person from "material-ui-icons/Person"
 
 import { fetchUsers, deleteUser } from "../data/actions"
 import renderError from "../components/RenderError"
@@ -12,7 +10,7 @@ class UsersList extends Component {
     this.props.fetchUsers()
   }
 
-  // Call the action creator to handle the delete
+  // Call the action creator to handle the deletion
   handleDelete(id) {
     const { deleteUser, history } = this.props
     deleteUser(id, { history })
@@ -20,16 +18,14 @@ class UsersList extends Component {
 
   renderUsersList() {
     const { usersList } = this.props
-    if (!usersList) return <div>Loading...</div>
+    if (!usersList) return <h4>Loading...</h4>
 
     return usersList.map((user, i) => (
       <div key={i}>
         <li className="user">
           <i className="material-icons users-list__icon">person_pin</i>
-          <div>
-            <h6>{user.fullname}</h6>
-            <p>{`Door Access: ${user.access}`}</p>
-          </div>
+          <h6>{user.fullname}</h6>
+          <p>{`Door Access: ${user.access}`}</p>
           <button
             className="btn btn-raised btn-danger delete-btn"
             onClick={() => this.handleDelete(user._id)}
