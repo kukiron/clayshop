@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
 
-// These components redirect after user events
+// Redirect user after successful access
 export const AuthSuccess = () => {
   return (
     <div className="redirect">
@@ -11,6 +11,7 @@ export const AuthSuccess = () => {
   )
 }
 
+// Redirect user if no authorization for access
 export const AuthFailure = () => {
   return (
     <div className="redirect">
@@ -39,7 +40,7 @@ export const NewUserCreated = connect(({ auth: { signupSuccess } }) => ({
   signupSuccess
 }))(SignupSuccessPage)
 
-// Redirect after user existing deletion
+// Redirect after admin deleting an existing user
 class UserDeletedPage extends Component {
   render() {
     return (

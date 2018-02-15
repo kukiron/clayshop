@@ -25,7 +25,7 @@ class Navbar extends Component {
   }
 
   // Navigation link only for Admin to create & delete user
-  addUserLink() {
+  adminNavLink() {
     const { authenticated, userAccess } = this.props
     return (
       authenticated &&
@@ -59,7 +59,7 @@ class Navbar extends Component {
           {authenticated
             ? this.authenticatedUser()
             : this.unauthenticatedUser()}
-          {this.addUserLink()}
+          {this.adminNavLink()}
         </ul>
       </div>
     )

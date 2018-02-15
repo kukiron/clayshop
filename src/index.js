@@ -13,7 +13,7 @@ import { AUTH_USER } from "./data/actions/constants"
 const token = localStorage.getItem("token"),
   store = createStore(rootReducer, {}, applyMiddleware(reduxThunk))
 
-// If we have a token, the user should be authenticated and app state updated
+// If users have tokens, they should be authenticated and app state updated
 token && store.dispatch({ type: AUTH_USER })
 
 ReactDOM.render(

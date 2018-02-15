@@ -19,9 +19,7 @@ export default ComposedComponent => {
     }
   }
 
-  function mapStateToProps({ users: { userAccess } }) {
-    return { userAccess }
-  }
+  const mapStateToProps = ({ users: { userAccess } }) => ({ userAccess })
 
   return connect(mapStateToProps)(AuthAdmin)
 }
