@@ -6,6 +6,10 @@ import Divider from "material-ui/Divider"
 const styles = theme => ({
   root: {
     backgroundColor: theme.palette.background.paper
+  },
+  list: {
+    width: "50vw",
+    marginRight: "10px"
   }
 })
 
@@ -16,14 +20,14 @@ const DoorsDetail = props => {
   return (
     <div className={classes.root}>
       <List component="nav">
-        <ListItem style={{ width: "50vw", marginRight: "10px" }}>
+        <ListItem className={classes.list}>
           <i className="material-icons">store</i>
           <ListItemText primary="Front Door" />
           Employees need to have authorized access for the front door
         </ListItem>
         <Divider dark="true" />
 
-        <ListItem style={{ width: "50vw", marginRight: "10px" }}>
+        <ListItem className={classes.list}>
           <i className="material-icons">storage</i>
           <ListItemText primary="Storage Door" />
           Only the employees with proper authorization can access the storage

@@ -9,6 +9,10 @@ import { fetchUsers } from "../../data/actions"
 const styles = theme => ({
   root: {
     backgroundColor: theme.palette.background.paper
+  },
+  list: {
+    width: "50vw",
+    marginRight: "10px"
   }
 })
 
@@ -19,12 +23,12 @@ class UsersDetail extends Component {
 
   // Get the users' list from server and list them with access details
   renderUsers() {
-    const { usersList } = this.props
+    const { usersList, classes } = this.props
     if (!usersList) return <div>Loading...</div>
 
     return usersList.map((user, index) => (
       <div key={index}>
-        <ListItem style={{ width: "50vw", marginRight: "10px" }}>
+        <ListItem className={classes.list}>
           <i className="material-icons">person_pin</i>
           <ListItemText
             primary={user.fullname}
