@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 
 // HOC: protect routes for logged in users
 export default ComposedComponent => {
-  class Authentication extends Component {
+  class RequireAuth extends Component {
     componentWillMount() {
       const { authenticated, history } = this.props
       !authenticated && history.push("/")
@@ -21,5 +21,5 @@ export default ComposedComponent => {
 
   const mapStateToProps = ({ auth: { authenticated } }) => ({ authenticated })
 
-  return connect(mapStateToProps)(Authentication)
+  return connect(mapStateToProps)(RequireAuth)
 }

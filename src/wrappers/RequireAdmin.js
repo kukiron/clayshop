@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 
 // HOC: protect routes for Admin auth'd routes
 export default ComposedComponent => {
-  class AuthAdmin extends Component {
+  class RequireAdmin extends Component {
     componentWillMount() {
       const { userAccess, history } = this.props
       userAccess !== "Admin" && history.push("/clayshop")
@@ -21,5 +21,5 @@ export default ComposedComponent => {
 
   const mapStateToProps = ({ users: { userAccess } }) => ({ userAccess })
 
-  return connect(mapStateToProps)(AuthAdmin)
+  return connect(mapStateToProps)(RequireAdmin)
 }
