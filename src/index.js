@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom"
 import reduxThunk from "redux-thunk"
 
 import Routes from "./Routes"
-import NavBar from "./components/NavBar"
+import NavBar from "./components/Navbar"
 import rootReducer from "./data/reducers"
 import { AUTH_USER } from "./data/actions/constants"
 

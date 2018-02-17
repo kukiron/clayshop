@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 import { reduxForm, Field } from "redux-form"
 
-import renderError from "../../components/renderError"
+import renderError from "../../components/RenderError"
 import { renderTextField, validate, showPassword } from "./form-helpers"
 import { AuthButtons } from "../../components/Buttons"
 import { authenticateUser } from "../../data/actions"

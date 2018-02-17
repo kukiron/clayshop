@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 
 import { fetchUsers, deleteUser } from "../data/actions"
-import renderError from "../components/renderError"
+import renderError from "../components/RenderError"
 
 // Rendering a list of users to delete account
 class UsersList extends Component {
