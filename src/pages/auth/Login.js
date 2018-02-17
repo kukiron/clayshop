@@ -4,8 +4,8 @@ import { reduxForm, Field } from "redux-form"
 
 import renderError from "../../components/renderError"
 import { renderTextField, validate, showPassword } from "./form-helpers"
-import { authenticateUser } from "../../data/actions"
 import { AuthButtons } from "../../components/Buttons"
+import { authenticateUser } from "../../data/actions"
 
 // Form component using redux-form
 class Login extends Component {
