@@ -68,7 +68,7 @@ export const authenticateUser = ({
     // handle bad request
     dispatch({
       type: LOGIN_ERROR,
-      payload: "Bad login info"
+      payload: "Invalid email or password"
     })
   }
 }
