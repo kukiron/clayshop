@@ -6,7 +6,7 @@ import { routeChange } from "../data/actions"
 
 // HOC: wraps the entire app to check for route change & remove dangling errors
 export default ComposedComponent => {
-  class ResetErrors extends Component {
+  class RouteChangeWrapper extends Component {
     componentWillReceiveProps(nextProps) {
       const { routeChange, location } = this.props
       location.pathname !== nextProps.location.pathname && routeChange()
@@ -17,5 +17,5 @@ export default ComposedComponent => {
     }
   }
 
-  return withRouter(connect(null, { routeChange })(ResetErrors))
+  return withRouter(connect(null, { routeChange })(RouteChangeWrapper))
 }
