@@ -33,7 +33,7 @@ export const NewUserCreated = connect(({ auth: { signupSuccess } }) => ({
 }))(SignupSuccessPage)
 
 // Redirect after admin deleting an existing user
-const UserDeletedPage = ({ deleteSuccess }) => (
+const DeleteSuccessPage = ({ deleteSuccess }) => (
   <div className="redirect">
     <img src="public/images/user-deleted.png" alt="delete user image" />
     <h3>{deleteSuccess}</h3>
@@ -42,4 +42,4 @@ const UserDeletedPage = ({ deleteSuccess }) => (
 
 export const UserDeleted = connect(({ auth: { deleteSuccess } }) => ({
   deleteSuccess
-}))(UserDeletedPage)
+}))(DeleteSuccessPage)
