@@ -22,3 +22,10 @@ password: example123
 ```
 
 Only users with admin priviledge can create & delete users accounts. Admin routes are protected & can't be accessed with the example credentials.
+
+**Admin account** for test purposes:
+
+```shell
+Email: admin@clayshop.com
+password: adminpass
+```
