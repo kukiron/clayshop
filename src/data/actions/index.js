@@ -1,4 +1,4 @@
-require("babel-polyfill")
+import "babel-polyfill"
 import axios from "axios"
 
 import {
@@ -24,22 +24,19 @@ export const signupUser = ({
   access,
   history
 }) => async dispatch => {
-  const request = axios.post(`${ROOT_URL}/signup`, {
-    fullname,
-    email,
-    password,
-    access
-  })
-
   try {
-    const response = await request
+    const response = await axios.post(`${ROOT_URL}/signup`, {
+      fullname,
+      email,
+      password,
+      access
+    })
     dispatch({
       type: SIGNUP_USER,
       payload: response.data.message
     })
     history.push("/user-created")
   } catch ({ response }) {
-    // handle bad request
     dispatch({
       type: SIGNUP_ERROR,
       payload: response.data.error
@@ -53,19 +50,16 @@ export const authenticateUser = ({
   password,
   history
 }) => async dispatch => {
-  const request = axios.post(`${ROOT_URL}/login`, {
-    email,
-    password
-  })
-
   try {
-    const response = await request
+    const response = await axios.post(`${ROOT_URL}/login`, {
+      email,
+      password
+    })
     dispatch({ type: AUTH_USER })
     localStorage.setItem("token", response.data.token)
     history.push("/clayshop")
   } catch (err) {
     console.log(err)
-    // handle bad request
     dispatch({
       type: LOGIN_ERROR,
       payload: "Invalid email or password"
@@ -75,10 +69,10 @@ export const authenticateUser = ({
 
 // delete existing user
 export const deleteUser = (id, { history }) => async dispatch => {
-  const request = axios.delete(`${ROOT_URL}/delete`, { params: { id } })
-
   try {
-    const response = await request
+    const response = await axios.delete(`${ROOT_URL}/delete`, {
+      params: { id }
+    })
     dispatch({
       type: DELETE_USER,
       payload: response.data.success
