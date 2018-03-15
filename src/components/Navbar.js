@@ -1,55 +1,68 @@
-import React from "react"
+import React, { Component } from "react"
 import { connect } from "react-redux"
 import { NavLink } from "react-router-dom"
 
-const NavBar = ({ authenticated, userAccess }) => {
+class NavBar extends Component {
   // Navbar for authenticated users
-  const authenticatedUser = () => [
-    <li key={1}>
-      <NavLink to="/clayshop">ClayShop</NavLink>
-    </li>,
-    <li key={2}>
-      <NavLink to="/logout">Logout</NavLink>
-    </li>
-  ]
+  authenticatedUser() {
+    return [
+      <li key={1}>
+        <NavLink to="/clayshop">ClayShop</NavLink>
+      </li>,
+      <li key={2}>
+        <NavLink to="/logout">Logout</NavLink>
+      </li>
+    ]
+  }
 
   // Navbar for unauthenticated users
-  const unauthenticatedUser = () => (
-    <li>
-      <NavLink to="/login">User Access</NavLink>
-    </li>
-  )
-
-  // Navigation link only for Admin to create & delete user
-  const adminNavLink = () =>
-    authenticated &&
-    userAccess === "Admin" && (
+  unauthenticatedUser() {
+    return (
       <li>
-        <a href="#">
-          Admin <span className="arrow">&#9660;</span>
-        </a>
-        <ul className="sub-menu">
-          <li>
-            <NavLink to="/signup">Add User</NavLink>
-          </li>
-          <li>
-            <NavLink to="/delete-user">Delete User</NavLink>
-          </li>
-        </ul>
+        <NavLink to="/login">User Access</NavLink>
       </li>
     )
+  }
 
-  return (
-    <div className="menu">
-      <ul>
+  // Navigation link only for Admin to create & delete user
+  adminNavLink() {
+    const { authenticated, userAccess } = this.props
+
+    if (authenticated && userAccess === "Admin") {
+      return (
         <li>
-          <NavLink to="/">Home</NavLink>
+          <a href="#">
+            Admin <span className="arrow">&#9660;</span>
+          </a>
+          <ul className="sub-menu">
+            <li>
+              <NavLink to="/signup">Add User</NavLink>
+            </li>
+            <li>
+              <NavLink to="/delete-user">Delete User</NavLink>
+            </li>
+          </ul>
         </li>
-        {authenticated ? authenticatedUser() : unauthenticatedUser()}
-        {adminNavLink()}
-      </ul>
-    </div>
-  )
+      )
+    }
+  }
+
+  render() {
+    const { authenticated } = this.props
+    return (
+      <div className="menu">
+        <ul>
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          {authenticated
+            ? this.authenticatedUser()
+            : this.unauthenticatedUser()}
+          {this.adminNavLink()}
+        </ul>
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = ({
