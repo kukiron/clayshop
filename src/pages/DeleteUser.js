@@ -44,7 +44,7 @@ class UsersList extends Component {
     return (
       <div className="users-list__delete">
         <div>{renderError(deleteErrorMsg)}</div>
-        <ul> {this.renderUsersList()}</ul>
+        <ul>{this.renderUsersList()}</ul>
       </div>
     )
   }

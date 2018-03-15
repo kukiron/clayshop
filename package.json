@@ -4,15 +4,14 @@
   "description": "ClayShop Smart-lock web interface using REST API",
   "main": "server.js",
   "scripts": {
-    "clear": "rm -rf ./build",
+    "clear": "rm -rf ./dist",
     "start": "node server.js",
-    "dev:client": "nodemon --watch *.js --exec \"webpack-dev-server\"",
+    "dev:client": "nodemon --exec \"webpack-dev-server\"",
     "build": "npm run clear && webpack -p",
     "heroku-prebuild": "npm install --only=dev",
     "heroku-postbuild": "npm run build",
     "lint": "eslint . --ext .js, .jsx",
-    "lint:fix": "eslint --fix . --ext .js, .jsx",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:fix": "eslint --fix . --ext .js, .jsx"
   },
   "engines": {
     "node": "9.5.0",
@@ -34,8 +33,14 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
+    "css-loader": "^0.28.10",
     "eslint-config-latest": "^1.0.6",
+    "extract-text-webpack-plugin": "^3.0.2",
     "nodemon": "^1.14.12",
+    "style-loader": "^0.20.3",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "url-loader": "^1.0.1",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.1"
   },

@@ -11,7 +11,7 @@ class Signout extends Component {
   render() {
     return (
       <div className="logout">
-        <img src="public/images/clayshop_logo.png" alt="logged out image" />
+        <img src="assets/images/clayshop_logo.png" alt="logged out image" />
         <h2>You are logged out of ClayShop.</h2>
       </div>
     )

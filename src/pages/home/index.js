@@ -25,7 +25,7 @@ const SimpleExpansionPanel = props => {
   const { classes } = props
   return (
     <div className="home">
-      <img src="public/images/clayshop_logo.png" alt="ClayShop logo" />
+      <img src="assets/images/clayshop_logo.png" alt="ClayShop logo" />
       <h1>Welcome to ClayShop</h1>
       <div className={classes.root}>
         <ExpansionPanel>
