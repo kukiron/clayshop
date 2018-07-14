@@ -1,8 +1,10 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
-import { withStyles } from "material-ui/styles"
-import List, { ListItem, ListItemText } from "material-ui/List"
-import Divider from "material-ui/Divider"
+import { withStyles } from "@material-ui/core/styles"
+import List from "@material-ui/core/List"
+import ListItem from "@material-ui/core/ListItem"
+import ListItemText from "@material-ui/core/ListItemText"
+import Divider from "@material-ui/core/Divider"
 
 import { fetchUsers } from "../../data/actions"
 
@@ -53,6 +55,9 @@ class UsersDetail extends Component {
 
 const mapStateToProps = ({ users: { usersList } }) => ({ usersList })
 
-const Users = connect(mapStateToProps, { fetchUsers })(UsersDetail)
+const Users = connect(
+  mapStateToProps,
+  { fetchUsers }
+)(UsersDetail)
 
 export default withStyles(styles)(Users)

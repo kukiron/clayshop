@@ -1,10 +1,9 @@
 import React from "react"
-import { withStyles } from "material-ui/styles"
-import ExpansionPanel, {
-  ExpansionPanelSummary,
-  ExpansionPanelDetails
-} from "material-ui/ExpansionPanel"
-import ExpandMoreIcon from "material-ui-icons/ExpandMore"
+import { withStyles } from "@material-ui/core/styles"
+import ExpansionPanel from "@material-ui/core/ExpansionPanel"
+import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary"
+import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails"
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 
 import Users from "./Users"
 import Doors from "./Doors"
