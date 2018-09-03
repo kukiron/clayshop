@@ -21,15 +21,13 @@ if (token) {
 }
 
 ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <div>
+  <BrowserRouter>
+    <Provider store={store}>
+      <div className="container">
         <NavBar />
-        <div className="container">
-          <Routes />
-        </div>
+        <Routes />
       </div>
-    </BrowserRouter>
-  </Provider>,
+    </Provider>
+  </BrowserRouter>,
   document.getElementById("root")
 )
