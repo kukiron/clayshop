@@ -55,4 +55,7 @@ const mapStateToProps = ({
   errors: { deleteErrorMsg }
 }) => ({ usersList, deleteErrorMsg })
 
-export default connect(mapStateToProps, { fetchUsers, deleteUser })(UsersList)
+export default connect(
+  mapStateToProps,
+  { fetchUsers, deleteUser }
+)(UsersList)

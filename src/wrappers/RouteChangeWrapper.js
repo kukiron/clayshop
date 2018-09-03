@@ -17,5 +17,10 @@ export default ComposedComponent => {
     }
   }
 
-  return withRouter(connect(null, { routeChange })(RouteChangeWrapper))
+  return withRouter(
+    connect(
+      null,
+      { routeChange }
+    )(RouteChangeWrapper)
+  )
 }

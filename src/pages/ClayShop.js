@@ -45,4 +45,7 @@ class ClayShop extends Component {
 
 const mapStateToProps = ({ users: { userAccess } }) => ({ userAccess })
 
-export default connect(mapStateToProps, { fetchUserAccess })(ClayShop)
+export default connect(
+  mapStateToProps,
+  { fetchUserAccess }
+)(ClayShop)

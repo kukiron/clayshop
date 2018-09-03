@@ -52,4 +52,9 @@ const mapStateToProps = ({ errors: { signupErrorMsg } }) => ({
 export default reduxForm({
   form: "singup",
   validate
-})(connect(mapStateToProps, { signupUser })(Signup))
+})(
+  connect(
+    mapStateToProps,
+    { signupUser }
+  )(Signup)
+)

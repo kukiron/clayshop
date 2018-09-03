@@ -35,4 +35,9 @@ const mapStateToProps = ({ errors: { loginErrorMsg } }) => ({
 export default reduxForm({
   form: "login",
   validate
-})(connect(mapStateToProps, { authenticateUser })(Login))
+})(
+  connect(
+    mapStateToProps,
+    { authenticateUser }
+  )(Login)
+)
