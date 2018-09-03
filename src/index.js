@@ -9,12 +9,16 @@ import "./app.styl"
 import Routes from "./Routes"
 import NavBar from "./components/Navbar"
 import rootReducer from "./data/reducers"
+import { fetchUserAccess } from "./data/actions"
 import { AUTH_USER } from "./data/actions/constants"
 
 const store = createStore(rootReducer, {}, applyMiddleware(reduxThunk))
 const token = localStorage.getItem("token")
 // If users have tokens, they should be authenticated and app state updated
-token && store.dispatch({ type: AUTH_USER })
+if (token) {
+  store.dispatch({ type: AUTH_USER })
+  store.dispatch(fetchUserAccess())
+}
 
 ReactDOM.render(
   <Provider store={store}>
