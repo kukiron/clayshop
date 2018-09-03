@@ -30,8 +30,8 @@ class NavBar extends Component {
 
     if (authenticated && userAccess === "Admin") {
       return (
-        <li>
-          <a href="#">
+        <li className="dropdown">
+          <a>
             Admin <span className="arrow">&#9660;</span>
           </a>
           <ul className="sub-menu">
