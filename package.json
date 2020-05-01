@@ -11,7 +11,9 @@
     "heroku-prebuild": "npm install --only=dev",
     "heroku-postbuild": "npm run build",
     "lint": "eslint . --ext .js, .jsx",
-    "lint:fix": "eslint --fix . --ext .js, .jsx"
+    "lint:fix": "eslint --fix . --ext .js, .jsx",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "engines": {
     "node": "9.5.0",
@@ -57,6 +59,8 @@
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
     "redux-form": "^7.4.2",
-    "redux-thunk": "^2.3.0"
-  }
+    "redux-thunk": "^2.3.0",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
