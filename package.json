@@ -11,7 +11,9 @@
     "heroku-prebuild": "npm install --only=dev",
     "heroku-postbuild": "npm run build",
     "lint": "eslint . --ext .js, .jsx",
-    "lint:fix": "eslint --fix . --ext .js, .jsx"
+    "lint:fix": "eslint --fix . --ext .js, .jsx",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "engines": {
     "node": "9.5.0",
@@ -48,15 +50,17 @@
   "dependencies": {
     "@material-ui/core": "^3.0.1",
     "@material-ui/icons": "^3.0.1",
-    "axios": "^0.18.0",
+    "axios": "^0.21.3",
     "express": "^4.16.3",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
     "redux-form": "^7.4.2",
-    "redux-thunk": "^2.3.0"
-  }
+    "redux-thunk": "^2.3.0",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
